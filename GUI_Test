@@ -41,9 +41,13 @@ root.title('Robocopy Commad Creater')
 root.eval("tk::PlaceWindow . center")
 
 #create frame widget
-frame1 = tk.Frame(root, width=500, height=50, bg=bg_color)
+frame1 = tk.Frame(root, width=500, height=500, bg=bg_color)
 frame2 = tk.Frame(root, bg=bg_color)
-frame1.grid(row=0, column=0)
+
+for frame in (frame1, frame2):
+    frame.grid(row=0, column=0)
+
+load_frame1()
 
 #run app
 root.mainloop()

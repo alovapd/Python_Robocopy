@@ -6,7 +6,7 @@ main_label_text = 'Paste the Original filepath in the box below'
 btn_text = 'Get Robocopy cmd'
 
 def load_frame2():
-    print('Hello Adam') 
+    print('something')
 
 def load_frame1():
     frame1.pack_propagate(False)
@@ -24,9 +24,9 @@ def load_frame1():
     fg="white",
     font=('TKMenuFont', 10)
     ).pack(pady=10)
-
+    
     # TextBox Creation 
-    tk.Text(
+    inputtxt = tk.Text(
     frame1, 
     height = 1, 
     width = 60

@@ -5,9 +5,6 @@ bg_color = 'black'
 main_label_text = 'Paste the Original filepath in the box below'
 btn_text = 'Get Robocopy cmd'
 
-def load_frame2():
-    print('something')
-
 def load_frame1():
     frame1.pack_propagate(False)
     # frame1 widgets
@@ -42,8 +39,11 @@ def load_frame1():
     cursor='hand2',
     activebackground='#badee2',
     activeforeground='black',
-    command=lambda:load_frame2()
+    command=lambda:load_frame2(inputtxt)
     ).pack(pady=5, side=tk.BOTTOM)
+
+    def GetUserTxt():
+        print(inputtxt.get())
 
 #initialize app
 root = tk.Tk()

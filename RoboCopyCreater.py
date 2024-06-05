@@ -18,13 +18,14 @@
 #                         gives it an proper input
 #                       - make .exe which is portable
 ##########################################################################################
+import Test
 
-OriginalFilePath = input(r'What is the Original filepath?') 
+OriginalFilePath = Test.input_entry.get()
 
 # Defined variables that are not expected to change
-Server222 = r'\\10.10.50.222\3\HTCU Master Case Files'
+Server222 = r'\\10.10.20.555\3\HTCU Master Case Files'
 
-#Debug#'\\10.10.50.221\s$\HTCU MASTER CASE FILES\2024 CASES\HTCU CR#24-017 - ET - OSP - ALLIANCE OP - KELLY'
+#Debug#'\\10.10.20.000\sss\HTCU MASTER CASE FILES\2024 THINGS\HTCU CR#24-017 - XX - AGCY - Name Here - KELLY'
 
 # Creates a list of the items delimited using the backslash charecter in the OriginalFilePath string
 CaseString = OriginalFilePath.split('\\')

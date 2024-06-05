@@ -1,10 +1,12 @@
 import tkinter as tk
 from PIL import ImageTk
-import Test
 
 bg_color = 'black'
 main_label_text = 'Paste the Original filepath in the box below'
 btn_text = 'Get Robocopy cmd'
+
+def load_frame2():
+    print('Hello Adam') 
 
 def load_frame1():
     frame1.pack_propagate(False)
@@ -21,10 +23,10 @@ def load_frame1():
     bg=bg_color,
     fg="white",
     font=('TKMenuFont', 10)
-    ).pack(pady=10)
-    
+    ).pack(pady=10) n
+
     # TextBox Creation 
-    inputtxt = tk.Text(
+    tk.Text(
     frame1, 
     height = 1, 
     width = 60
@@ -40,11 +42,8 @@ def load_frame1():
     cursor='hand2',
     activebackground='#badee2',
     activeforeground='black',
-    command=lambda:load_frame2(inputtxt)
+    command=lambda:load_frame2()
     ).pack(pady=5, side=tk.BOTTOM)
-
-    def GetUserTxt():
-        print(inputtxt.get())
 
 #initialize app
 root = tk.Tk()

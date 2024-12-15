@@ -14,24 +14,43 @@ def load_frame1():
     logo_widget.image = logo_img
     logo_widget.pack(pady=20, side=tk.LEFT)
 
-    # creates the label above the input field
+    # Creates the label above the input field
     tk.Label(frame1, text=main_label_text, bg=bg_color, fg="white", font=('TKMenuFont', 10)).pack(pady=10)
     
     # TextBox Creation 
     inputtxt = tk.Text(frame1, height = 1, width = 60).pack(pady=10) 
 
-    # button widget
+    # Button Creation
+    #{DEV} Need to solve this lambda function throws error
     tk.Button(frame1, text=btn_text, font=('TKHeadingFont', 10), 
     bg='#28393a', fg='white', cursor='hand2', activebackground='#badee2', activeforeground='black', command=lambda:load_frame1(inputtxt)
     ).pack(pady=5, side=tk.BOTTOM)
 
-    def GetUserTxt():
-        print(inputtxt.get())
+    # Menu for the features across the top
+    menu = tk.Menu(window)
+
+    # File Menu
+    file_menu = tk.Menu(menu, tearoff = False)
+    file_menu.add_command(label = 'New', command = lambda: print('New File'))
+    file_menu.add_command(label = 'Open', command = lambda: print('Open File'))
+    #file_menu.add_separator() ##This can add a seperator in the menu if desired.
+    menu.add_cascade(label = 'File', menu = file_menu)
+
+    #  Help Menu
+    help_menu = tk.Menu(menu, tearoff = False)
+    help_menu.add_command(label = 'Get Help', command = lambda: print('Get Help'))
+    menu.add_cascade(label = 'Help', menu = help_menu)
+
+    window.configure(menu = menu)
+    
+    #def GetUserTxt():
+        #print(inputtxt.get())
 
 #initialize app
 window = tk.Tk()
 window.title('Robocopy Commad Creater')
 window.eval("tk::PlaceWindow . center")
+window.resizable(False,False)
 
 #create frame widget
 frame1 = tk.Frame(window, width=750, height=150, bg=bg_color)

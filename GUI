@@ -1,10 +1,10 @@
 import tkinter as tk
 from PIL import ImageTk
-import Test
 
-bg_color = 'black'
-main_label_text = 'Paste the Original filepath in the box below'
-btn_text = 'Get Robocopy cmd'
+# Changeable constatnts unique to this app
+bg_color = 'black' #set to the desired background color (logo's natural background is black)
+main_label_text = 'Paste the Original filepath in the box below' #set to what you want the label to say
+btn_text = 'Get Robocopy cmd' # Set to change the buttons text
 
 def load_frame1():
     frame1.pack_propagate(False)
@@ -14,46 +14,28 @@ def load_frame1():
     logo_widget.image = logo_img
     logo_widget.pack(pady=20, side=tk.LEFT)
 
-    # Just a label for refrence
-    tk.Label(
-    frame1, 
-    text=main_label_text,
-    bg=bg_color,
-    fg="white",
-    font=('TKMenuFont', 10)
-    ).pack(pady=10)
+    # creates the label above the input field
+    tk.Label(frame1, text=main_label_text, bg=bg_color, fg="white", font=('TKMenuFont', 10)).pack(pady=10)
     
     # TextBox Creation 
-    inputtxt = tk.Text(
-    frame1, 
-    height = 1, 
-    width = 60
-    ).pack(pady=10) 
+    inputtxt = tk.Text(frame1, height = 1, width = 60).pack(pady=10) 
 
     # button widget
-    tk.Button(
-    frame1,
-    text=btn_text,
-    font=('TKHeadingFont', 10),
-    bg='#28393a',
-    fg='white',
-    cursor='hand2',
-    activebackground='#badee2',
-    activeforeground='black',
-    command=lambda:load_frame2(inputtxt)
+    tk.Button(frame1, text=btn_text, font=('TKHeadingFont', 10), 
+    bg='#28393a', fg='white', cursor='hand2', activebackground='#badee2', activeforeground='black', command=lambda:load_frame1(inputtxt)
     ).pack(pady=5, side=tk.BOTTOM)
 
     def GetUserTxt():
         print(inputtxt.get())
 
 #initialize app
-root = tk.Tk()
-root.title('Robocopy Commad Creater')
-root.eval("tk::PlaceWindow . center")
+window = tk.Tk()
+window.title('Robocopy Commad Creater')
+window.eval("tk::PlaceWindow . center")
 
 #create frame widget
-frame1 = tk.Frame(root, width=750, height=150, bg=bg_color)
-frame2 = tk.Frame(root, bg=bg_color)
+frame1 = tk.Frame(window, width=750, height=150, bg=bg_color)
+frame2 = tk.Frame(window, bg=bg_color)
 
 for frame in (frame1, frame2):
     frame.grid(row=0, column=0)
@@ -61,4 +43,4 @@ for frame in (frame1, frame2):
 load_frame1()
 
 #run app
-root.mainloop()
+window.mainloop()

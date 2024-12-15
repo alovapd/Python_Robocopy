@@ -1,6 +1,9 @@
 import tkinter as tk
 from PIL import ImageTk
 
+#{DEV} Im trying to figue out if there is a need for the two frames
+#       Trying to see if there is a ned for the function to "create" the GUI
+
 # Changeable constatnts unique to this app
 bg_color = 'black' #set to the desired background color (logo's natural background is black)
 main_label_text = 'Paste the Original filepath in the box below' #set to what you want the label to say

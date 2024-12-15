@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from PIL import ImageTk
+#from PIL import ImageTk
 
 #{DEV} Trying to pass the text in the input field to be transfered to the RoboCopyCreater.py script when the button is pressed
 
@@ -8,11 +8,10 @@ from PIL import ImageTk
 bg_color = 'black' #set to the desired background color (logo's natural background is black)
 main_label_text = 'Paste the original filepath in the box below' #set to what you want the label to say
 btn_text = 'Get Robocopy cmd' # Set to change the buttons text
-window_size = '700x150' #set to change the size of the window
+window_size = '700x300' #set to change the size of the window
 
 # Functions
 def button_func(entry_string):
-    print('a button was pressed')
     print(entry_string.get())
 
 # Initialize Window (App)
@@ -24,17 +23,18 @@ window.configure(bg=bg_color)
 window.geometry(window_size)
 
 # Widgets
-logo_img = ImageTk.PhotoImage(file='starter_files/assets/sohtctflogo.png')
-logo_widget = tk.Label(window, image=logo_img, bg=bg_color)
-logo_widget.image = logo_img
-logo_widget.pack(pady=20, side=tk.LEFT)
+#logo_img = ImageTk.PhotoImage(file='starter_files/assets/sohtctflogo.png')
+#logo_widget = tk.Label(window, image=logo_img, bg=bg_color)
+#logo_widget.image = logo_img
+#logo_widget.pack(pady=20, side=tk.LEFT)
 
 # Creates the label above the input field
-tk.Label(window, text=main_label_text, bg=bg_color, fg="white", font=('TKMenuFont', 10)).pack(pady=10)
+tk.Label(window, text=main_label_text, bg=bg_color, fg='white', font=('TKMenuFont', 10)).pack(pady=10)
     
 # TextBox Creation 
-entry_string = tk.StringVar(value='test')
+entry_string = tk.StringVar()
 entry = ttk.Entry(window, textvariable = entry_string).pack(pady=10) 
+#Debug#'\\10.10.50.221\s$\HTCU MASTER CASE FILES\2024 CASES\HTCU CR#24-017 - ET - OSP - ALLIANCE OP - KELLY'
 
 # Button Creation
 #{DEV} Need to get the string from the input field when button is pressed, store in variable, pass to next module
